@@ -1,0 +1,9 @@
+D:\Projects\.NET projects\CoinChangeProblem\bin\Debug\netstandard2.0\CoinChangeProblem.deps.json
+D:\Projects\.NET projects\CoinChangeProblem\bin\Debug\netstandard2.0\CoinChangeProblem.dll
+D:\Projects\.NET projects\CoinChangeProblem\bin\Debug\netstandard2.0\CoinChangeProblem.pdb
+D:\Projects\.NET projects\CoinChangeProblem\obj\Debug\netstandard2.0\CoinChangeProblem.csprojAssemblyReference.cache
+D:\Projects\.NET projects\CoinChangeProblem\obj\Debug\netstandard2.0\CoinChangeProblem.AssemblyInfoInputs.cache
+D:\Projects\.NET projects\CoinChangeProblem\obj\Debug\netstandard2.0\CoinChangeProblem.AssemblyInfo.cs
+D:\Projects\.NET projects\CoinChangeProblem\obj\Debug\netstandard2.0\CoinChangeProblem.csproj.CoreCompileInputs.cache
+D:\Projects\.NET projects\CoinChangeProblem\obj\Debug\netstandard2.0\CoinChangeProblem.dll
+D:\Projects\.NET projects\CoinChangeProblem\obj\Debug\netstandard2.0\CoinChangeProblem.pdb

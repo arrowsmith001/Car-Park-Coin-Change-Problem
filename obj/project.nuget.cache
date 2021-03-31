@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "AaT5WGHV0/CuYanDG2elzVfuYtCnXDtcwkZzNFruriRlYX0uXzGeMegyFsUDGAzzjjQpmoc9FAMEwq/uFX8mvA==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\.NET projects\\CoinChangeProblem\\CoinChangeProblem.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\a\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\a\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
