@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CoinChangeProblem.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace CoinChangeProblem
 {
     // Assumes our cash reserves are infinite
-    public class CoinChangeCalculator
+    public class CoinChangeCalculator : ICoinChangeCalculator
     {
         static float[] PermittedCash => new float[] { 20, 10, 5, 1, 0.5f, 0.2f, 0.1f, 0.05f, 0.02f, 0.01f };
 
@@ -34,7 +35,7 @@ namespace CoinChangeProblem
             PaymentDue = CalculatePayment(t.TotalMinutes);
 
             Console.WriteLine("Time in: " + timeIn + ", " + "Time out: " + timeOut + ", " + "Duration: " + (int)(t.TotalMinutes/60) +"h " + (t.TotalMinutes % 60) + "m");
-            Console.WriteLine("OutputCost: " + Tools.GetMoneyString(PaymentDue));
+            Console.WriteLine("OutputCost: " + MyStrings.GetMoneyString(PaymentDue));
 
             return true;
         }
@@ -49,14 +50,13 @@ namespace CoinChangeProblem
             if(PaymentReceived < PaymentDue)
             {
                 Console.WriteLine("Error: Not enough cash inserted." +
-                    "\n\tRequired: " + Tools.GetMoneyString(PaymentDue) + 
-                    "\n\tGiven: " + Tools.GetMoneyString(PaymentReceived));
+                    "\n\tRequired: " + MyStrings.GetMoneyString(PaymentDue) + 
+                    "\n\tGiven: " + MyStrings.GetMoneyString(PaymentReceived));
             }
 
-            Console.WriteLine("PaymentReceived: " + Tools.GetMoneyString(PaymentReceived));
+            Console.WriteLine("PaymentReceived: " + MyStrings.GetMoneyString(PaymentReceived));
 
             Change change = new Change(PaymentReceived - PaymentDue, PermittedCash);
-            change.PrintResult();
 
             Reset();
 
@@ -84,7 +84,7 @@ namespace CoinChangeProblem
    
 
 
-    public class Tools
+    public class MyStrings
     {
         public static string GetMoneyString(float amount)
         {

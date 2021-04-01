@@ -10,20 +10,19 @@ namespace CoinChangeProblem
         {
             ChangeTotal = changeTotal;
             OutputChange = CalculateChange(ChangeTotal, permittedCash);
+
+            PrintResult();
         }
 
-        // Permitted cash is assumed:
-        // - To be in descending order of value
-        // - To include 0.01 aka 1p
+        // Permitted cash is assumed to include 0.01 aka 1p!
         public static List<float> CalculateChange(float cost, float[] permittedCash)
         {
             List<float> change = new List<float>();
+            Array.Sort(permittedCash, (a, b) => b == a ? 0 : (b < a ? -1 : 1));
 
             int i = -1;
             while (cost > 0)
             {
-                //Console.WriteLine(cost);
-
                 i++;
                 float cash = permittedCash[i];
 
@@ -37,15 +36,6 @@ namespace CoinChangeProblem
             }
 
             return change;
-        }
-
-        public void PrintResult()
-        {
-            string changeString = "";
-            foreach (float f in OutputChange) changeString += Tools.GetMoneyString(f) + ", ";
-            if (changeString.Length >= 2) changeString = changeString.Substring(0, changeString.Length - 2);
-
-            Console.WriteLine("Output Change: " + changeString);
         }
 
         public static Change Empty()
@@ -67,6 +57,15 @@ namespace CoinChangeProblem
                 changeTotal.Clear();
                 foreach (float f in value) changeTotal.Add(f);
             }
+        }
+
+        private void PrintResult()
+        {
+            string changeString = "";
+            foreach (float f in OutputChange) changeString += MyStrings.GetMoneyString(f) + ", ";
+            if (changeString.Length >= 2) changeString = changeString.Substring(0, changeString.Length - 2);
+
+            Console.WriteLine("Output Change: " + changeString);
         }
 
     }

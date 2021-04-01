@@ -1,20 +1,14 @@
-﻿using System;
+﻿using CoinChangeProblem.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CoinChangeProblem
 {
-    public class CoinChangeCalculatorManager
+    public class CoinChangeCalculatorManager : ICoinChangeCalculatorManager
     {
 
-        private CoinChangeCalculator calc = new CoinChangeCalculator();
-
-        public Change DoTransaction(string timeIn, string timeOut, float[] payment)
-        {
-            float sum = 0;
-            foreach (float f in payment) sum += f;
-            return DoTransaction(timeIn, timeOut, sum);
-        }
+        private ICoinChangeCalculator calc = new CoinChangeCalculator();
 
         public Change DoTransaction(string timeIn, string timeOut, float payment)
         {
