@@ -7,6 +7,8 @@ namespace CoinChangeProblem
     // Assumes our cash reserves are infinite
     public class CoinChangeCalculator : ICoinChangeCalculator
     {
+        ICoinChangeClass _coinChangeClass = new CoinChangeClass(); 
+
         static float[] PermittedCash => new float[] { 20, 10, 5, 1, 0.5f, 0.2f, 0.1f, 0.05f, 0.02f, 0.01f };
 
         public float PaymentDue { get; private set; }
@@ -56,7 +58,8 @@ namespace CoinChangeProblem
 
             Console.WriteLine("PaymentReceived: " + MyStrings.GetMoneyString(PaymentReceived));
 
-            Change change = new Change(PaymentReceived - PaymentDue, PermittedCash);
+           
+            Change change = _coinChangeClass.CalculateChange(PaymentReceived - PaymentDue, PermittedCash);
 
             Reset();
 
